@@ -14,27 +14,29 @@ class Companies extends Component{
 
        let updatedCompanies = this.state.companies;
        Service.getCompanyBydomain(this.state.newDomain)
-       .then((newCompany) => { 
-        updatedCompanies.push(newCompany);
-        this.setState({companies: updatedCompanies})
-       });
+        .then((newCompany) => { 
+            updatedCompanies.push(newCompany);
+            this.setState({companies: updatedCompanies, newDomain: ""})
+        })
+        .catch((e) => alert("Error with entered domain. Please try again"));
       
     }
 
     render(){
         return (
           <div>
-          <h2>EquityBee</h2>
+            <h2>EquityBee</h2>
             <h1>Companies</h1>
-            
-            <div className="newCompany">
-              <h2>Add new company</h2>
-              <p><b>Domain: </b>
-              <input type="text" size="30" value={this.state.newDomain} onChange={e => this.setState({newDomain: e.target.value})}></input>
-              </p>
+                <div className="newCompany">
+                    <h2>Add new company</h2>
+                    <p><b> Domain: </b>
+                        <input type="text" 
+                         size="30" 
+                        value={this.state.newDomain} 
+                        onChange={e => this.setState({newDomain: e.target.value})}></input>
+                    </p>
               <input type="submit" value="Add" onClick={this.addDomain}></input>
               </div> 
-
                 <div className="allCompanies">
                     <ul>
                     {this.state.companies.map((company, i) =>                
@@ -44,8 +46,6 @@ class Companies extends Component{
                                 )}
                     </ul>
                 </div>
-              
-
             </div>)
     }
 }
