@@ -1,0 +1,31 @@
+ul {
+  list-style: none;
+  padding: 0px;
+  width: 30%;
+  margin: auto;
+}
+
+li {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  border-radius: 20rem;
+  padding: 16px;
+  margin: 16px;
+  background-color: #0e6b53;
+  color: white;
+}
+
+.newCompany {
+  background-color: #00cb86;
+  width: 50%;
+  position: relative;
+  left: 280px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20rem;
+  color: white;
+}
+
+.newCompany input {
+  border-radius: 5rem;
+}
