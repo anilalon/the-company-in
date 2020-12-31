@@ -12,9 +12,9 @@ const companyDetails = (props) => {
             <a> <b>Name:</b> {companyDetails.name} </a>  <br/>
             <a> <b>Domain:</b> {companyDetails.domain } </a>  <br/>
             <a> <b>Description :</b> {companyDetails.description} </a>  <br/>
-            <a> <b>Industry:</b> {companyDetails.industry} </a>  <br/>
-            <a> <b>Employess:</b> {companyDetails.metrics.employess} </a>  <br/>
-            <a> <b>Annual Revenue:</b> {companyDetails.metrics.annualRevenue } </a>  
+            {(companyDetails.industry)  ?  <a> <b>Industry:</b> {companyDetails.industry}   <br/></a> : null}
+            {(companyDetails.metrics.employess ) ?   <a> <b>Employess:</b> {companyDetails.metrics.employess}  <br/> </a> : null }
+            {(companyDetails.metrics.annualRevenue) ?    <a> <b>Annual Revenue:</b> {companyDetails.metrics.annualRevenue }   <br/></a> : null }  
 
         </div>
     )
